@@ -18,28 +18,60 @@
     }
 
     // Regular
+    console.log('Kieryn');
 
     // Interpolated
+    console.log('Hi %s', 'Kieryn');
 
     // Styled
+    console.log('%c Hi Kizza', 'font-size: 20px; text-shadow: 10px 10px 0 grey');
 
     // warning!
+    console.warn('watch out!');
 
     // Error :|
+    console.error('whoops!');
 
     // Info
+    console.info('this is for information in console');
 
     // Testing
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('im not in this p tag'), 'will fire if first arguement is false!');
 
     // clearing
+    // console.clear(); dont use this at the bottom of a file
 
     // Viewing DOM Elements
+    console.dir(p);
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`this is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.groupEnd(`${dog.name}`);
+    });
 
     // counting
+    console.count('Kieryn');
+    console.count('Kieryn');
+    console.count('Kieryn');
+    console.count('Jake');
+    console.count('Kieryn');
+    console.count('Kieryn');
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/KierynMo')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
+
+    console.table(dogs);
 
   </script>
 </body>
