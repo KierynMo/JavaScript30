@@ -7,6 +7,21 @@
 </head>
 <body>
 <script>
+
+ const pressed = [];
+ const secretWord = "kizza";
+
+  window.addEventListener('keyup', (e) => {
+  pressed.push(e.key);
+  pressed.splice(-secretWord.length - 1, pressed.length - secretWord.length);
+  if(pressed.join('') == secretWord) {
+   console.log('you did it!');
+   cornify_add();
+  } else {
+    console.log('not it');
+  }
+ });
+
 </script>
 </body>
 </html>
